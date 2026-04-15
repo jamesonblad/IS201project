@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --red:        #8e2727;
+  --red-dark:   #6b1c1c;
+  --red-light:  #c0392b;
+  --ink:        #1a1212;
+  --paper:      #faf8f5;
+  --gray-light: #f0eeea;
+  --rule:       #ddd8d0;
+  --muted:      #7a7070;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+/* ── NAV BUTTON ─────────────────────────────── */
+.nav-btn {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  text-decoration: none;
+  padding: 0.55rem 1.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  margin: 1.2rem 1.5rem;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover { background: var(--red-dark); }
+
+/* ── HERO / BACKGROUND IMAGE ────────────────── */
+/*
+  IMPORTANT FOR GITHUB PAGES:
+  The CSS file lives at css/mystyle.css.
+  url() paths in CSS are relative to the CSS file's location.
+  So to reach assets/img/ from css/, we go up one level: ../assets/img/
+  Make sure your image is committed to: assets/img/EagleFly.jpg
+*/
+.backgroundimage {
+  background-image: url("../assets/img/EagleFly.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.backgroundimage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 5, 5, 0.52);
+}
+
+.backgroundimage h1 {
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  padding: 0 1.5rem;
+}
+
+/* ── SUBHEADING / CENTER TEXT ───────────────── */
+.centertext {
+  text-align: center;
+  background: var(--gray-light);
+  border-bottom: 1px solid var(--rule);
+}
+
+.subheading {
+  font-family: 'Playfair Display', serif;
+  color: var(--ink);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.subheading h2 {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.subheading h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--red);
+  margin: 0.7rem auto 0;
+  border-radius: 2px;
+}
+
+/* ── LIST / CONTENT BLOCK ───────────────────── */
+.leftlist {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+.blockdesign {
+  text-align: left;
+  padding: 2.5rem 2rem;
+}
+
+.leftlist ol {
+  list-style: none;
+  counter-reset: item;
+  padding: 0;
+}
+
+.leftlist ol > li {
+  counter-increment: item;
+  background: white;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--red);
+  border-radius: 4px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--red-dark);
+  transition: box-shadow 0.2s;
+}
+
+.leftlist ol > li:hover {
+  box-shadow: 0 4px 16px rgba(142,39,39,0.1);
+}
+
+.leftlist ol > li > ul {
+  list-style: none;
+  padding: 0.6rem 0 0 0;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.leftlist ol > li > ul > li {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--ink);
+  padding: 0.3rem 0;
+}
+
+.leftlist ol > li > ul > li::before {
+  content: '— ';
+  color: var(--red);
+  font-weight: 500;
+}
+
+/* ── VIDEO ──────────────────────────────────── */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 760px;
+  margin: 2rem auto;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ── FOOTER / BACK TO TOP ───────────────────── */
+.footer-bar {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--rule);
+  margin-top: 2rem;
+}
+
+.footer-bar a {
+  color: var(--red);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.footer-bar a:hover { color: var(--red-dark); }
