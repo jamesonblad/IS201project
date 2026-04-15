@@ -41,7 +41,7 @@ body {
 
 /* ── HERO / BACKGROUND IMAGE ────────────────── */
 .backgroundimage {
-  background-image: url("../assets/img/EagleFly.jpg");
+  background-image: url("/IS201project/assets/img/EagleFly.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
