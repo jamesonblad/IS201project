@@ -5,10 +5,14 @@
   --red-dark:   #6b1c1c;
   --red-light:  #c0392b;
   --ink:        #1a1212;
-  --paper:      #faf8f5;
+  --paper:      #f6ecde;
   --gray-light: #f0eeea;
   --rule:       #ddd8d0;
   --muted:      #7a7070;
+}
+
+body {
+  background-color: var(--beige);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
